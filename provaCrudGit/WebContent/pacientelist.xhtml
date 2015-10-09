@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title>Usuáios</title>
+</head>
+
+<body>
+
+	<div id="content">
+		<h1>Receitas</h1>
+		<h:link outcome="userform">Adicionar</h:link>
+		<h:form>
+			<h:dataTable value="#{pacienteMB.pacientes}" var="paciente">
+				<h:column>
+					<f:facet name="header">ID</f:facet>
+					<h:outputText value="#{paciente.id}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{paciente.nome}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Dosagem</f:facet>
+					<h:outputText value="#{paciente.dosagem}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Intervalo</f:facet>
+					<h:outputText value="#{paciente.intervalo}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Duração</f:facet>
+					<h:outputText value="#{paciente.duracao}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header"></f:facet>
+					<h:commandLink value="Editar" action="#{pacienteMB.editar(paciente.id)}" />
+					&nbsp;&nbsp;&nbsp;
+					<h:commandLink value="X" action="#{pacienteMB.excluir(paciente.id)}"
+					 onclick="return confirm('Tem certeza que deseja excluir receita &#34;#{paciente.nome}&#34;?')" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</div>
+
+</body>
+
+</html>

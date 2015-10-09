@@ -20,15 +20,15 @@ public class PacienteMB {
 		paciente = new Paciente();
 	}
 
-	public List<Paciente> getPacientes() {
+	public List<Paciente> getUsuarios() {
 		if(usuarios == null){
 			usuarios = rn.listar();
  		}
 		return usuarios;
 	}
 
-	public void setPasientes(List<Paciente> pacientes) {
-		this.usuarios = pacientes;
+	public void setUsuarios(List<Paciente> usuarios) {
+		this.usuarios = usuarios;
 	}
 
 	public Paciente getPaciente() {

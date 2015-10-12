@@ -29,8 +29,8 @@ public class PacienteDao extends Dao {
 			PreparedStatement ps = getConnection().prepareStatement(INSERT);
 			ps.setString(1, paciente.getNome());
 			ps.setDouble(2, paciente.getDosagem());
-			ps.setDouble(3, paciente.getIntervalo());
-			ps.setDouble(4, paciente.getDuracao());
+			ps.setString(3, paciente.getIntervalo());
+			ps.setString(4, paciente.getDuracao());
 			
 			ps.executeUpdate();
 
@@ -45,8 +45,8 @@ public class PacienteDao extends Dao {
 			PreparedStatement ps = getConnection().prepareStatement(UPDATE);
 			ps.setString(1, paciente.getNome());
 			ps.setDouble(2, paciente.getDosagem());
-			ps.setDouble(3, paciente.getIntervalo());
-			ps.setDouble(4, paciente.getDuracao());
+			ps.setString(3, paciente.getIntervalo());
+			ps.setString(4, paciente.getDuracao());
 			ps.setLong(5, paciente.getId());
 
 			ps.executeUpdate();
@@ -79,8 +79,8 @@ public class PacienteDao extends Dao {
 				Paciente paciente = new Paciente();
 				paciente.setNome(rs.getString("nome"));
 				paciente.setDosagem(rs.getDouble("dosagem"));
-				paciente.setIntervalo(rs.getDouble("intervalo"));
-				paciente.setDuracao(rs.getDouble("duracao"));
+				paciente.setIntervalo(rs.getString("intervalo"));
+				paciente.setDuracao(rs.getString("duracao"));
 				paciente.setId(rs.getLong("id"));
 				pacientes.add(paciente);
 			}
@@ -100,8 +100,8 @@ public class PacienteDao extends Dao {
 				Paciente paciente = new Paciente();
 				paciente.setNome(rs.getString("nome"));
 				paciente.setDosagem(rs.getDouble("dosagem"));
-				paciente.setIntervalo(rs.getDouble("intervalo"));
-				paciente.setDuracao(rs.getDouble("duracao"));
+				paciente.setIntervalo(rs.getString("intervalo"));
+				paciente.setDuracao(rs.getString("duracao"));
 				paciente.setId(rs.getLong("id"));
 				return paciente;
 			}

@@ -14,7 +14,7 @@
 		<h1>Receitas</h1>
 		<h:link outcome="userform">Adicionar</h:link>
 		<h:form>
-			<h:dataTable value="#{pacienteMB.pacientes}" var="paciente">
+			<h:dataTable value="#{pacienteMB.usuarios}" var="paciente">
 				<h:column>
 					<f:facet name="header">ID</f:facet>
 					<h:outputText value="#{paciente.id}" />

@@ -4,8 +4,8 @@ public class Paciente {
 	private Long id;
 	private String nome;
 	private Double dosagem;
-	private Double intervalo;
-	private Double duracao;
+	private String intervalo;
+	private String duracao;
 	
 	public Long getId() {
 		return id;
@@ -25,16 +25,16 @@ public class Paciente {
 	public void setDosagem(Double dosagem) {
 		this.dosagem = dosagem;
 	}
-	public Double getIntervalo() {
+	public String getIntervalo() {
 		return intervalo;
 	}
-	public void setIntervalo(Double intervalo) {
+	public void setIntervalo(String intervalo) {
 		this.intervalo = intervalo;
 	}
-	public Double getDuracao() {
+	public String getDuracao() {
 		return duracao;
 	}
-	public void setDuracao(Double duracao) {
+	public void setDuracao(String duracao) {
 		this.duracao = duracao;
 	}
 	

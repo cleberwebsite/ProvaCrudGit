@@ -22,12 +22,12 @@ public class PacienteRn {
 			throw new Exception("A dosagem deve ser maior que 0 (zero)!");
 		}
 		
-		if (paciente.getIntervalo() > 0) {
-			throw new Exception("O intervalo deve ser maior que 0 (zero)!");
+		if (paciente.getIntervalo().trim().isEmpty()) {
+			throw new Exception("O intervalo deve ser informado!");
 		}
 		
-		if (paciente.getDuracao() > 0) {
-			throw new Exception("A duração deve ser maior que 0 (zero)!");
+		if (paciente.getDuracao().trim().isEmpty()) {
+			throw new Exception("A duração deve ser informada!");
 		}
 		
 		dao.salvar(paciente);
